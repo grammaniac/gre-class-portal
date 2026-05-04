@@ -7,6 +7,21 @@
 <meta name="supported-color-schemes" content="light">
 <meta name="theme-color" content="#fafaf7">
 <title>MoMoZip 주말 실전반 · 5월</title>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="송종옥 GRE Verbal">
+<meta property="og:title" content="MoMoZip 주말 실전반 · 송종옥 GRE Verbal">
+<meta property="og:description" content="토요일 1개월 압축 · TCSE · RCCR Volume">
+<meta property="og:url" content="https://grammaniac.github.io/gre-class-portal/weekend-advanced/">
+<meta property="og:image" content="https://grammaniac.github.io/gre-class-portal/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MoMoZip 주말 실전반 · 송종옥 GRE Verbal">
+<meta name="twitter:description" content="토요일 1개월 압축 · TCSE · RCCR Volume">
+<meta name="twitter:image" content="https://grammaniac.github.io/gre-class-portal/og-image.png">
+<meta name="description" content="토요일 1개월 압축 · TCSE · RCCR Volume">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -370,6 +385,162 @@
 </style>
 </head>
 <body>
+
+<!-- 비밀번호 검증 게이트 -->
+<div id="auth-gate" style="
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--paper); z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+">
+  <div style="
+    max-width: 420px; width: 100%;
+    background: var(--paper-2);
+    border: 2px solid var(--ink);
+    padding: 36px 32px;
+    text-align: center;
+  ">
+    <div style="
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    ">
+      <span style="width: 24px; height: 1px; background: var(--accent);"></span>
+      LOCKED
+      <span style="width: 24px; height: 1px; background: var(--accent);"></span>
+    </div>
+    <div style="
+      font-family: 'Fraunces', serif;
+      font-weight: 700; font-size: 32px;
+      color: var(--accent); margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    ">주말 실전반</div>
+    <div style="
+      font-family: 'IBM Plex Sans KR', sans-serif;
+      font-size: 14px; color: var(--muted);
+      margin-bottom: 28px; line-height: 1.6;
+    ">수강생 전용 페이지입니다.<br>비밀번호를 입력해주세요.</div>
+    <input type="password" id="auth-input" autocomplete="off"
+      placeholder="비밀번호"
+      style="
+        width: 100%; padding: 14px 16px;
+        border: 1px solid var(--rule);
+        background: var(--paper);
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 16px;
+        color: var(--ink);
+        outline: none;
+        margin-bottom: 12px;
+        text-align: center;
+        letter-spacing: 0.04em;
+      "
+      onkeypress="if(event.key==='Enter') checkAuth()"
+    >
+    <button onclick="checkAuth()" style="
+      width: 100%; padding: 14px;
+      background: var(--ink); color: var(--paper);
+      border: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s;
+    " onmouseover="this.style.background='var(--accent)'" onmouseout="this.style.background='var(--ink)'">
+      입장 →
+    </button>
+    <div id="auth-error" style="
+      font-size: 13px; color: var(--accent);
+      margin-top: 14px; min-height: 18px;
+      font-family: 'IBM Plex Sans KR', sans-serif;
+    "></div>
+    <div style="
+      margin-top: 24px; padding-top: 20px;
+      border-top: 1px dashed var(--rule);
+      font-size: 12px; color: var(--muted);
+      line-height: 1.6;
+    ">
+      비밀번호를 모르시나요?<br>
+      <a href="mailto:grammaniac@gmail.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">grammaniac@gmail.com</a>으로 문의주세요.
+    </div>
+  </div>
+</div>
+
+<script>
+  // 비밀번호 게이트 로직
+  (function() {
+    const CLASS_ID = 'weekend-advanced';
+    const STORAGE_KEY = 'gre-auth-' + CLASS_ID;
+    const SESSION_HOURS = 24;
+    
+    // 기존 인증 토큰 확인
+    function checkExistingAuth() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (!stored) return false;
+        const data = JSON.parse(stored);
+        const now = Date.now();
+        if (now - data.time < SESSION_HOURS * 60 * 60 * 1000) {
+          return true;
+        } else {
+          localStorage.removeItem(STORAGE_KEY);
+          return false;
+        }
+      } catch (e) {
+        return false;
+      }
+    }
+    
+    // 페이지 로드 시 즉시 체크
+    if (checkExistingAuth()) {
+      document.getElementById('auth-gate').style.display = 'none';
+      document.body.style.overflow = '';
+    } else {
+      document.body.style.overflow = 'hidden';
+      // 입력 필드에 자동 포커스
+      setTimeout(() => {
+        const input = document.getElementById('auth-input');
+        if (input) input.focus();
+      }, 100);
+    }
+    
+    // 비밀번호 검증 함수 (전역)
+    window.checkAuth = async function() {
+      const input = document.getElementById('auth-input');
+      const error = document.getElementById('auth-error');
+      const password = input.value.trim();
+      
+      if (!password) {
+        error.textContent = '비밀번호를 입력해주세요.';
+        return;
+      }
+      
+      try {
+        const response = await fetch('../data/passwords.json');
+        const passwords = await response.json();
+        const correct = passwords[CLASS_ID];
+        
+        if (password === correct) {
+          // 통과: localStorage에 토큰 저장
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            time: Date.now()
+          }));
+          document.getElementById('auth-gate').style.display = 'none';
+          document.body.style.overflow = '';
+        } else {
+          error.textContent = '비밀번호가 올바르지 않습니다.';
+          input.value = '';
+          input.focus();
+        }
+      } catch (e) {
+        error.textContent = '오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+        console.error(e);
+      }
+    };
+  })();
+</script>
+
 
 <nav class="top-nav">
   <a href="../">← 홈</a>
