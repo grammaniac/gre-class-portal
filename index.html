@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#fafaf7">
+<title>GRE Verbal · 송종옥</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* 다크모드 차단 */
+  :root {
+    color-scheme: light only !important;
+    forced-color-adjust: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: light only !important; }
+    html, body {
+      background: #fafaf7 !important;
+      color: #1a1a1a !important;
+    }
+  }
+  html { color-scheme: light !important; }
+
+  :root {
+    --ink: #1a1a1a;
+    --paper: #fafaf7;
+    --paper-2: #f3f1ea;
+    --rule: #d8d4c7;
+    --muted: #6b6557;
+    --accent-basic: #1e3a5f;
+    --accent-advanced: #8b3a2e;
+    --accent-basic-soft: #4a6b8c;
+    --accent-advanced-soft: #c4654d;
+    --highlight-basic: #e3eaf2;
+    --highlight-advanced: #f5e9d3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    color-scheme: light;
+  }
+  body {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    border-top: 1px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding: 32px 32px 28px;
+    background: var(--paper);
+    text-align: center;
+  }
+  .masthead-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .masthead-eyebrow::before,
+  .masthead-eyebrow::after {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--rule);
+  }
+  .masthead-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(36px, 6vw, 64px);
+    letter-spacing: -0.025em;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .masthead-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .masthead-instructor {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .masthead-instructor .name {
+    font-weight: 700;
+  }
+
+  .intro {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 32px 32px;
+    text-align: center;
+  }
+  .intro-greeting {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 28px);
+    line-height: 1.4;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .intro-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    max-width: 1100px;
+    margin: 0 auto 16px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before,
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .class-grid {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .class-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    padding: 28px 28px 24px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    position: relative;
+    min-height: 220px;
+  }
+  .class-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--ink);
+  }
+
+  .class-card.basic { border-top: 4px solid var(--accent-basic); }
+  .class-card.advanced { border-top: 4px solid var(--accent-advanced); }
+
+  .class-card.basic:hover { background: var(--highlight-basic); }
+  .class-card.advanced:hover { background: var(--highlight-advanced); }
+
+  .class-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .class-card.basic .class-eyebrow { color: var(--accent-basic); }
+  .class-card.advanced .class-eyebrow { color: var(--accent-advanced); }
+
+  .class-name-en {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 2px;
+    letter-spacing: 0.02em;
+  }
+  .class-name-ko {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.5vw, 36px);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .class-card.basic .class-name-ko { color: var(--accent-basic); }
+  .class-card.advanced .class-name-ko { color: var(--accent-advanced); }
+
+  .class-meta {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .class-meta strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-right: 6px;
+  }
+
+  .class-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+  }
+  .class-card.basic .class-arrow { color: var(--accent-basic); }
+  .class-card.advanced .class-arrow { color: var(--accent-advanced); }
+  .class-arrow .symbol {
+    font-size: 16px;
+    transition: transform 0.18s ease;
+  }
+  .class-card:hover .class-arrow .symbol {
+    transform: translateX(4px);
+  }
+
+  .contact {
+    border-top: 1px solid var(--rule);
+    background: var(--paper-2);
+    padding: 40px 32px;
+  }
+  .contact-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .contact-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .contact-list .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .contact-list a {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .contact-list a:hover {
+    color: var(--accent-advanced);
+    border-color: var(--accent-advanced);
+  }
+  .contact-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+  .contact-note a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-decoration: none;
+  }
+
+  footer {
+    padding: 24px 32px 32px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  footer .signature {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink);
+    letter-spacing: 0;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 720px) {
+    .masthead { padding: 24px 18px 22px; }
+    .intro { padding: 40px 18px 24px; }
+    .section-label { padding: 0 18px; margin-bottom: 12px; }
+    .class-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 0 18px;
+      margin-bottom: 48px;
+    }
+    .class-card { min-height: auto; padding: 24px 22px 22px; }
+    .contact { padding: 32px 18px; }
+    .contact-list { gap: 18px; flex-direction: column; align-items: center; }
+    footer { padding: 20px 18px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1 class="masthead-title">송종옥 GRE Verbal</h1>
+  <div class="masthead-sub">Pattern Book · MoMoZip · 거의만점어휘집</div>
+  <div class="masthead-instructor"><span class="name">송종옥</span> · grammaniac@gmail.com</div>
+</header>
+
+<section class="intro">
+  <p class="intro-greeting">반갑습니다. 수강하시는 반을 선택해주세요.</p>
+  <p class="intro-text">매일 수업 자료가 새롭게 업데이트됩니다.<br>아래에서 본인 반을 클릭하시면 그날의 영상·자료·모의고사로 바로 이동합니다.</p>
+</section>
+
+<div class="section-label">반 선택</div>
+
+<div class="class-grid">
+
+  <a href="basic/" class="class-card basic">
+    <div class="class-eyebrow">Pattern Book · 월수금</div>
+    <div class="class-name-en">Pattern Book</div>
+    <div class="class-name-ko">기본반</div>
+    <div class="class-meta">
+      <div><strong>시간</strong>10:00 — 13:50</div>
+      <div><strong>일정</strong>월 · 수 · 금 / 1개월 완성</div>
+      <div><strong>교재</strong>GRE Verbal Pattern Book</div>
+    </div>
+    <div class="class-arrow">
+      <span>오늘의 자료</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+  <a href="advanced/" class="class-card advanced">
+    <div class="class-eyebrow">MoMoZip · 화목금</div>
+    <div class="class-name-en">MoMoZip</div>
+    <div class="class-name-ko">실전반</div>
+    <div class="class-meta">
+      <div><strong>시간</strong>10:00 — 12:50</div>
+      <div><strong>일정</strong>화 · 목 · 금 / 1개월 완성</div>
+      <div><strong>교재</strong><span class="advanced-book">TCSE · RCCR Volume I</span></div>
+    </div>
+    <div class="class-arrow">
+      <span>오늘의 자료</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+  <a href="weekend-basic/" class="class-card basic">
+    <div class="class-eyebrow">Pattern Book · 토요일</div>
+    <div class="class-name-en">Pattern Book — Weekend</div>
+    <div class="class-name-ko">주말 기본반</div>
+    <div class="class-meta">
+      <div><strong>시간</strong>14:00 — 17:50</div>
+      <div><strong>일정</strong>토요일 / 2개월 완성</div>
+      <div><strong>교재</strong>GRE Verbal Pattern Book</div>
+    </div>
+    <div class="class-arrow">
+      <span>오늘의 자료</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+  <a href="weekend-advanced/" class="class-card advanced">
+    <div class="class-eyebrow">MoMoZip · 토요일</div>
+    <div class="class-name-en">MoMoZip — Weekend</div>
+    <div class="class-name-ko">주말 실전반</div>
+    <div class="class-meta">
+      <div><strong>시간</strong>09:00 — 12:50</div>
+      <div><strong>일정</strong>토요일 / 1개월 압축</div>
+      <div><strong>교재</strong><span class="advanced-book">TCSE · RCCR Volume I</span></div>
+    </div>
+    <div class="class-arrow">
+      <span>오늘의 자료</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+</div>
+
+<section class="contact">
+  <div class="contact-inner">
+    <div class="contact-label">— 문의 · 질문 —</div>
+    <ul class="contact-list">
+      <li>
+        <span class="label">Email</span>
+        <a href="mailto:grammaniac@gmail.com">grammaniac@gmail.com</a>
+      </li>
+      <li>
+        <span class="label">KakaoTalk</span>
+        <a href="https://open.kakao.com/o/s0ifxj1f" target="_blank" rel="noopener">오픈챗 입장</a>
+      </li>
+      <li>
+        <span class="label">Instagram</span>
+        <a href="https://www.instagram.com/gre_song" target="_blank" rel="noopener">@gre_song</a>
+      </li>
+    </ul>
+    <p class="contact-note">
+      교재 구입은 <strong>1별관 514호 카피나라</strong> (02-532-9660)에서 가능합니다.<br>
+      택배 구입 문의는 <a href="mailto:dhyoon@copynara.co.kr">dhyoon@copynara.co.kr</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="signature">송종옥</div>
+  <div>GRE Verbal Class Portal</div>
+</footer>
+
+<script>
+  // 실전반 교재: 홀수달 Volume I, 짝수달 Volume II
+  (function() {
+    const month = new Date().getMonth() + 1; // 1-12
+    const volume = (month % 2 === 1) ? 'I' : 'II';
+    const bookText = `TCSE · RCCR Volume ${volume}`;
+    document.querySelectorAll('.advanced-book').forEach(el => {
+      el.textContent = bookText;
+    });
+  })();
+</script>
+
+</body>
+</html>
