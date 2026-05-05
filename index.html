@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -280,7 +281,7 @@
   /* 무료 강의 섹션 구분선 */
   .free-divider {
     max-width: 1100px;
-    margin: 36px auto 24px;
+    margin: 36px auto 14px;
     padding: 0 32px;
     display: flex;
     align-items: center;
@@ -300,16 +301,32 @@
     letter-spacing: 0.01em;
     white-space: nowrap;
   }
+  .free-note {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 0 32px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
   @media (max-width: 640px) {
     .free-divider {
       padding: 0 20px;
-      margin: 28px auto 18px;
+      margin: 28px auto 12px;
       gap: 12px;
     }
     .free-divider-text {
       white-space: normal;
       text-align: center;
       word-break: keep-all;
+    }
+    .free-note {
+      padding: 0 20px;
+      margin: 0 auto 18px;
+      font-size: 12.5px;
     }
   }
 
@@ -497,15 +514,16 @@
   <span class="free-divider-text">무료지만 가장 도움이 되는 강의</span>
   <span class="free-divider-line"></span>
 </div>
+<div class="free-note">짝수달, 홀수달 강의의 구문 설명은 동일하지만, 연습 문제가 다릅니다.</div>
 
 <div class="class-grid">
 
-  <a href="analysis-even/" class="class-card analysis-even">
-    <div class="class-eyebrow">English Sentence Analysis · 짝수달</div>
+  <a href="analysis-odd/" class="class-card analysis-odd">
+    <div class="class-eyebrow">English Sentence Analysis · 홀수달</div>
     <div class="class-name-en">English Analysis</div>
-    <div class="class-name-ko">영문분석 짝수달</div>
+    <div class="class-name-ko">영문분석 홀수달</div>
     <div class="class-meta">
-      <div><strong>구성</strong>4주 과정 (1~4주차)</div>
+      <div><strong>구성</strong>4주 과정 (Week 1~4)</div>
       <div><strong>형식</strong>온라인 무료 강의</div>
       <div><strong>교재</strong>카피나라에서 구입</div>
     </div>
@@ -515,12 +533,12 @@
     </div>
   </a>
 
-  <a href="analysis-odd/" class="class-card analysis-odd">
-    <div class="class-eyebrow">English Sentence Analysis · 홀수달</div>
+  <a href="analysis-even/" class="class-card analysis-even">
+    <div class="class-eyebrow">English Sentence Analysis · 짝수달</div>
     <div class="class-name-en">English Analysis</div>
-    <div class="class-name-ko">영문분석 홀수달</div>
+    <div class="class-name-ko">영문분석 짝수달</div>
     <div class="class-meta">
-      <div><strong>구성</strong>4주 과정 (Week 1~4)</div>
+      <div><strong>구성</strong>4주 과정 (1~4주차)</div>
       <div><strong>형식</strong>온라인 무료 강의</div>
       <div><strong>교재</strong>카피나라에서 구입</div>
     </div>
