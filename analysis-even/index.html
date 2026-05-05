@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#fafaf7">
+<title>영문분석 짝수달 · 송종옥 GRE Verbal</title>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="송종옥 GRE Verbal">
+<meta property="og:title" content="영문분석 짝수달 · 송종옥 GRE Verbal">
+<meta property="og:description" content="GRE 문장 해석을 위한 무료 강의 — 짝수달 4주차 분량">
+<meta property="og:url" content="https://grammaniac.github.io/gre-class-portal/analysis-even/">
+<meta property="og:image" content="https://grammaniac.github.io/gre-class-portal/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="영문분석 짝수달 · 송종옥 GRE Verbal">
+<meta name="twitter:description" content="GRE 문장 해석을 위한 무료 강의 — 짝수달 4주차 분량">
+<meta name="twitter:image" content="https://grammaniac.github.io/gre-class-portal/og-image.png">
+<meta name="description" content="GRE 문장 해석을 위한 무료 강의 — 짝수달 4주차 분량">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light only !important;
+    forced-color-adjust: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: light only !important; }
+    html, body {
+      background: #fafaf7 !important;
+      color: #1a1a1a !important;
+    }
+  }
+  html { color-scheme: light !important; }
+
+  :root {
+    --ink: #1a1a1a;
+    --paper: #fafaf7;
+    --paper-2: #f3f1ea;
+    --rule: #d8d4c7;
+    --accent: #4a5d4f;
+    --accent-soft: #6b8270;
+    --muted: #6b6557;
+    --highlight: #e8ede5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    color-scheme: light;
+  }
+  body {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .top-nav {
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .top-nav a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .top-nav a:hover { color: var(--ink); }
+
+  .masthead {
+    border-top: 1px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding: 28px 32px 24px;
+    background: var(--paper);
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-rule {
+    width: 24px; height: 1px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .title-class {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 56px);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .title-month {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(20px, 2.5vw, 24px);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .title-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 36px 32px 60px;
+  }
+
+  .intro {
+    background: var(--highlight);
+    border-left: 4px solid var(--accent);
+    padding: 18px 22px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+  .intro strong { color: var(--accent); }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label:first-child { margin-top: 0; }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* 강의 카드 (세로 배치) */
+  .lesson-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 22px 24px;
+    margin-bottom: 12px;
+    transition: border-color 0.15s, transform 0.15s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+  }
+  .lesson-card:hover {
+    border-color: var(--ink);
+    border-left-color: var(--ink);
+  }
+  .lesson-card-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .lesson-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .lesson-week-en {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .lesson-card-title {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 12px;
+    word-break: keep-all;
+  }
+  .lesson-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+  }
+  .lesson-card:hover .lesson-card-cta {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* 자료 카드 */
+  .resource-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    padding: 22px 24px;
+    margin-bottom: 12px;
+    transition: border-color 0.15s;
+  }
+  .resource-card:hover { border-color: var(--ink); }
+  .resource-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .resource-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    word-break: keep-all;
+    line-height: 1.7;
+  }
+  .resource-card a {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .resource-card a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .resource-card a::after { content: " ↗"; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 24px 32px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  footer .signature {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: 0;
+  }
+
+  @media (max-width: 640px) {
+    .top-nav { padding: 12px 18px; }
+    .masthead { padding: 22px 18px 20px; }
+    main { padding: 28px 18px 48px; }
+    footer { padding: 20px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="../">← 홈</a>
+</nav>
+
+<header class="masthead">
+  <div class="brand"><span class="brand-rule"></span>English Sentence Analysis</div>
+  <div class="title-class">영문분석 짝수달</div>
+  <div class="title-month">GRE 문장 해석 무료 강의 — 4주 과정</div>
+  <span class="title-badge">FREE</span>
+</header>
+
+<main>
+
+  <div class="intro">
+    <strong>GRE 문장 해석을 위해 특별히 제작된 강의입니다.</strong><br>
+    문장 자체 해석이 힘드신 분들은 꼭 모두 보시기 바랍니다.<br>
+    교재는 1별관 514호 카피나라에서 주중에 구입 가능합니다.
+  </div>
+
+  <div class="section-label">강의 영상 (4주 과정)</div>
+
+  <a class="lesson-card" href="https://www.youtube.com/playlist?list=PL2LRXEvdvh4d227NwzF4Za47Y85RW4NUx" target="_blank" rel="noopener">
+    <div class="lesson-card-header">
+      <span class="lesson-num">1주차</span>
+      <span class="lesson-week-en">WEEK 01</span>
+    </div>
+    <div class="lesson-card-title">영문분석 1주차 강의 영상</div>
+    <span class="lesson-card-cta">YouTube 플레이리스트 열기 ↗</span>
+  </a>
+
+  <a class="lesson-card" href="https://www.youtube.com/playlist?list=PL2LRXEvdvh4fiH6_t8ikt_p3ul8zUm-xs" target="_blank" rel="noopener">
+    <div class="lesson-card-header">
+      <span class="lesson-num">2주차</span>
+      <span class="lesson-week-en">WEEK 02</span>
+    </div>
+    <div class="lesson-card-title">영문분석 2주차 강의 영상</div>
+    <span class="lesson-card-cta">YouTube 플레이리스트 열기 ↗</span>
+  </a>
+
+  <a class="lesson-card" href="https://www.youtube.com/playlist?list=PL2LRXEvdvh4dShlTmNsR3Z0t63V1bEzoS" target="_blank" rel="noopener">
+    <div class="lesson-card-header">
+      <span class="lesson-num">3주차</span>
+      <span class="lesson-week-en">WEEK 03</span>
+    </div>
+    <div class="lesson-card-title">영문분석 3주차 강의 영상</div>
+    <span class="lesson-card-cta">YouTube 플레이리스트 열기 ↗</span>
+  </a>
+
+  <a class="lesson-card" href="https://www.youtube.com/playlist?list=PL2LRXEvdvh4fauSln8cK4EWKt-VUIdIt-" target="_blank" rel="noopener">
+    <div class="lesson-card-header">
+      <span class="lesson-num">4주차</span>
+      <span class="lesson-week-en">WEEK 04</span>
+    </div>
+    <div class="lesson-card-title">영문분석 4주차 강의 영상</div>
+    <span class="lesson-card-cta">YouTube 플레이리스트 열기 ↗</span>
+  </a>
+
+  <div class="section-label">설명 자료</div>
+
+  <div class="resource-card">
+    <div class="resource-title">영문분석 짝수달 설명 자료</div>
+    <div class="resource-desc">
+      4주차 분량의 설명 자료가 정리되어 있습니다.<br>
+      강의 영상과 함께 학습하시면 효과가 극대화됩니다.
+    </div>
+    <a href="https://drive.google.com/open?id=1I6bnoHXgsBcq7bsKxZUyljoyCvtoCIqq&usp=drive_fs" target="_blank" rel="noopener">Drive 폴더 열기</a>
+  </div>
+
+  <div class="section-label">교재 구입</div>
+  <div class="resource-card">
+    <div class="resource-title">카피나라 (1별관 514호)</div>
+    <div class="resource-desc">
+      주중에 직접 방문하시거나 택배 구입이 가능합니다.<br>
+      전화 02-532-9660<br>
+      택배 구입 시 이메일로 전화번호 / 주소를 첨부해 연락 주세요.
+    </div>
+    <a href="mailto:dhyoon@copynara.co.kr">dhyoon@copynara.co.kr</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="signature">송종옥</div>
+  <div>영문분석 짝수달 · GRE Verbal · 무료 강의</div>
+</footer>
+
+</body>
+</html>
