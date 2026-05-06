@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -57,6 +56,10 @@
     --accent-analysis-odd: #8a6d3b;
     --highlight-analysis-even: #e8ede5;
     --highlight-analysis-odd: #f0e8d8;
+    --accent-vocab-quiz: #6b4c8a;
+    --accent-vocrain: #3e7a85;
+    --highlight-vocab-quiz: #ece5f3;
+    --highlight-vocrain: #dbecef;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -199,11 +202,15 @@
   .class-card.advanced { border-top: 4px solid var(--accent-advanced); }
   .class-card.analysis-even { border-top: 4px solid var(--accent-analysis-even); }
   .class-card.analysis-odd { border-top: 4px solid var(--accent-analysis-odd); }
+  .class-card.vocab-quiz { border-top: 4px solid var(--accent-vocab-quiz); }
+  .class-card.vocrain { border-top: 4px solid var(--accent-vocrain); }
 
   .class-card.basic:hover { background: var(--highlight-basic); }
   .class-card.advanced:hover { background: var(--highlight-advanced); }
   .class-card.analysis-even:hover { background: var(--highlight-analysis-even); }
   .class-card.analysis-odd:hover { background: var(--highlight-analysis-odd); }
+  .class-card.vocab-quiz:hover { background: var(--highlight-vocab-quiz); }
+  .class-card.vocrain:hover { background: var(--highlight-vocrain); }
 
   .class-eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -217,6 +224,8 @@
   .class-card.advanced .class-eyebrow { color: var(--accent-advanced); }
   .class-card.analysis-even .class-eyebrow { color: var(--accent-analysis-even); }
   .class-card.analysis-odd .class-eyebrow { color: var(--accent-analysis-odd); }
+  .class-card.vocab-quiz .class-eyebrow { color: var(--accent-vocab-quiz); }
+  .class-card.vocrain .class-eyebrow { color: var(--accent-vocrain); }
 
   .class-name-en {
     font-family: 'Fraunces', serif;
@@ -238,6 +247,8 @@
   .class-card.advanced .class-name-ko { color: var(--accent-advanced); }
   .class-card.analysis-even .class-name-ko { color: var(--accent-analysis-even); }
   .class-card.analysis-odd .class-name-ko { color: var(--accent-analysis-odd); }
+  .class-card.vocab-quiz .class-name-ko { color: var(--accent-vocab-quiz); }
+  .class-card.vocrain .class-name-ko { color: var(--accent-vocrain); }
 
   .class-meta {
     font-size: 13px;
@@ -270,6 +281,8 @@
   .class-card.advanced .class-arrow { color: var(--accent-advanced); }
   .class-card.analysis-even .class-arrow { color: var(--accent-analysis-even); }
   .class-card.analysis-odd .class-arrow { color: var(--accent-analysis-odd); }
+  .class-card.vocab-quiz .class-arrow { color: var(--accent-vocab-quiz); }
+  .class-card.vocrain .class-arrow { color: var(--accent-vocrain); }
   .class-arrow .symbol {
     font-size: 16px;
     transition: transform 0.18s ease;
@@ -544,6 +557,46 @@
     </div>
     <div class="class-arrow">
       <span>강의 자료</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+</div>
+
+<div class="free-divider">
+  <span class="free-divider-line"></span>
+  <span class="free-divider-text">어휘 학습 도구</span>
+  <span class="free-divider-line"></span>
+</div>
+
+<div class="class-grid">
+
+  <a href="https://buly.kr/DPVsswA" target="_blank" rel="noopener" class="class-card vocab-quiz">
+    <div class="class-eyebrow">Vocabulary · Self Test</div>
+    <div class="class-name-en">Vocabulary Quiz</div>
+    <div class="class-name-ko">거만어 퀴즈</div>
+    <div class="class-meta">
+      <div><strong>구성</strong>30 챕터 · 3,000 단어</div>
+      <div><strong>형식</strong>Quiz / Flashcard / Browse</div>
+      <div><strong>모드</strong>어휘 자가 테스트</div>
+    </div>
+    <div class="class-arrow">
+      <span>Quiz 시작</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+  <a href="https://grammaniac.github.io/vocarain" target="_blank" rel="noopener" class="class-card vocrain">
+    <div class="class-eyebrow">Vocabulary · Game</div>
+    <div class="class-name-en">Vocrain</div>
+    <div class="class-name-ko">Vocrain</div>
+    <div class="class-meta">
+      <div><strong>구성</strong>거만어 퀴즈 게임</div>
+      <div><strong>형식</strong>인터랙티브 어휘 게임</div>
+      <div><strong>특징</strong>재미있게 익히는 어휘</div>
+    </div>
+    <div class="class-arrow">
+      <span>게임 시작</span>
       <span class="symbol">→</span>
     </div>
   </a>
