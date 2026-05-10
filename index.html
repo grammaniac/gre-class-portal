@@ -60,6 +60,8 @@
     --accent-vocrain: #3e7a85;
     --highlight-vocab-quiz: #ece5f3;
     --highlight-vocrain: #dbecef;
+    --accent-placement-test: #3a3a3a;
+    --highlight-placement-test: #e8e6e0;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -204,6 +206,7 @@
   .class-card.analysis-odd { border-top: 4px solid var(--accent-analysis-odd); }
   .class-card.vocab-quiz { border-top: 4px solid var(--accent-vocab-quiz); }
   .class-card.vocrain { border-top: 4px solid var(--accent-vocrain); }
+  .class-card.placement-test { border-top: 4px solid var(--accent-placement-test); }
 
   .class-card.basic:hover { background: var(--highlight-basic); }
   .class-card.advanced:hover { background: var(--highlight-advanced); }
@@ -211,6 +214,7 @@
   .class-card.analysis-odd:hover { background: var(--highlight-analysis-odd); }
   .class-card.vocab-quiz:hover { background: var(--highlight-vocab-quiz); }
   .class-card.vocrain:hover { background: var(--highlight-vocrain); }
+  .class-card.placement-test:hover { background: var(--highlight-placement-test); }
 
   .class-eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -226,6 +230,7 @@
   .class-card.analysis-odd .class-eyebrow { color: var(--accent-analysis-odd); }
   .class-card.vocab-quiz .class-eyebrow { color: var(--accent-vocab-quiz); }
   .class-card.vocrain .class-eyebrow { color: var(--accent-vocrain); }
+  .class-card.placement-test .class-eyebrow { color: var(--accent-placement-test); }
 
   .class-name-en {
     font-family: 'Fraunces', serif;
@@ -249,6 +254,7 @@
   .class-card.analysis-odd .class-name-ko { color: var(--accent-analysis-odd); }
   .class-card.vocab-quiz .class-name-ko { color: var(--accent-vocab-quiz); }
   .class-card.vocrain .class-name-ko { color: var(--accent-vocrain); }
+  .class-card.placement-test .class-name-ko { color: var(--accent-placement-test); }
 
   .class-meta {
     font-size: 13px;
@@ -283,6 +289,7 @@
   .class-card.analysis-odd .class-arrow { color: var(--accent-analysis-odd); }
   .class-card.vocab-quiz .class-arrow { color: var(--accent-vocab-quiz); }
   .class-card.vocrain .class-arrow { color: var(--accent-vocrain); }
+  .class-card.placement-test .class-arrow { color: var(--accent-placement-test); }
   .class-arrow .symbol {
     font-size: 16px;
     transition: transform 0.18s ease;
@@ -516,6 +523,48 @@
     </div>
     <div class="class-arrow">
       <span>오늘의 자료</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+</div>
+
+<div class="free-divider">
+  <span class="free-divider-line"></span>
+  <span class="free-divider-text">반 선택을 위한 모의고사</span>
+  <span class="free-divider-line"></span>
+</div>
+
+<div class="class-grid">
+
+  <a href="https://grammaniac.github.io/mockuptest/Verbal_Mock_25.html" target="_blank" rel="noopener" class="class-card placement-test">
+    <div class="class-eyebrow">Placement Test · 진단 모의고사</div>
+    <div class="class-name-en">Verbal Mock 25</div>
+    <div class="class-name-ko">첫 번째 모의고사</div>
+    <div class="class-meta">
+      <div><strong>구성</strong>Verbal Section 1, 2</div>
+      <div><strong>형식</strong>실전형 모의고사</div>
+      <div><strong>용도</strong>본인 수준 진단 / 반 선택</div>
+      <div><strong>기준</strong>평균 152 이상은 실전반 바로 수강 가능</div>
+    </div>
+    <div class="class-arrow">
+      <span>모의고사 시작</span>
+      <span class="symbol">→</span>
+    </div>
+  </a>
+
+  <a href="https://grammaniac.github.io/mockuptest/Verbal_Mock_26.html" target="_blank" rel="noopener" class="class-card placement-test">
+    <div class="class-eyebrow">Placement Test · 진단 모의고사</div>
+    <div class="class-name-en">Verbal Mock 26</div>
+    <div class="class-name-ko">두 번째 모의고사</div>
+    <div class="class-meta">
+      <div><strong>구성</strong>Verbal Section 1, 2</div>
+      <div><strong>형식</strong>실전형 모의고사</div>
+      <div><strong>용도</strong>본인 수준 진단 / 반 선택</div>
+      <div><strong>기준</strong>평균 152 이상은 실전반 바로 수강 가능</div>
+    </div>
+    <div class="class-arrow">
+      <span>모의고사 시작</span>
       <span class="symbol">→</span>
     </div>
   </a>
