@@ -751,10 +751,11 @@
     </dl>
   </a>
 
-  <a class="day-card online disabled">
+  <a class="day-card online-day" data-date="2026-05-29" data-day-key="2026-05-29-day10">
     <div class="day-header">
       <span class="day-num">Day 10</span>
-      <span class="day-date">5월 말</span>
+      <span class="day-date">May 29 (FRI)</span>
+      <span class="day-online">온라인</span>
     </div>
     <dl class="day-content">
       <dt>TCSE</dt>
@@ -840,7 +841,8 @@
     "2026-05-21": "2026-05/2026-05-21-v6h4.html",
     "2026-05-26": "2026-05/2026-05-26-n3t9.html",
     "2026-05-28": "2026-05/2026-05-28-q1d5.html",
-    "2026-05-29": "2026-05/2026-05-29-s7b2.html"
+    "2026-05-29": "2026-05/2026-05-29-s7b2.html",
+    "2026-05-29-day10": "2026-05/2026-05-29-r4m1.html"
   };
 
   function getTodayKST() {
@@ -859,7 +861,8 @@
 
     if (cardDate === today) {
       card.classList.add('today');
-      card.href = dayUrls[cardDate] || '#';
+      const lookupKey = card.dataset.dayKey || cardDate;
+      card.href = dayUrls[lookupKey] || '#';
       const header = card.querySelector('.day-header');
       const badge = document.createElement('span');
       badge.className = 'day-today-badge';

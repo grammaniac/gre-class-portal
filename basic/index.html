@@ -759,10 +759,11 @@
     </dl>
   </a>
 
-  <a class="day-card online disabled">
+  <a class="day-card online-day" data-date="2026-05-27" data-day-key="2026-05-27-day10">
     <div class="day-header">
       <span class="day-num">Day 10</span>
-      <span class="day-date">5월 말</span>
+      <span class="day-date">May 27 (WED)</span>
+      <span class="day-online">온라인</span>
     </div>
     <dl class="day-content">
       <dt>TCSE Practice</dt>
@@ -850,7 +851,8 @@
     "2026-05-20": "2026-05/2026-05-20-y1c5.html",
     "2026-05-22": "2026-05/2026-05-22-b6v9.html",
     "2026-05-25": "2026-05/2026-05-25-d3z2.html",
-    "2026-05-27": "2026-05/2026-05-27-f7g8.html"
+    "2026-05-27": "2026-05/2026-05-27-f7g8.html",
+    "2026-05-27-day10": "2026-05/2026-05-27-j2k9.html"
   };
 
   // 오늘 날짜 (한국시간 기준)
@@ -872,7 +874,8 @@
     if (cardDate === today) {
       // 오늘 수업: 활성화 + 강조
       card.classList.add('today');
-      card.href = dayUrls[cardDate] || '#';
+      const lookupKey = card.dataset.dayKey || cardDate;
+      card.href = dayUrls[lookupKey] || '#';
 
       // "오늘" 배지 추가
       const header = card.querySelector('.day-header');
